@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import oc from 'open-color';
 import PropTypes from 'prop-types';
 import Thumbnail from './Thumbnail';
-import StarIcon from 'react-icons/lib/md/star';
-import EditIcon from 'react-icons/lib/md/edit';
-
+import {MdStar as StarIcon, MdEdit as EditIcon} from 'react-icons/md';
 
 const Wrapper = styled.div`
     /* 레이아웃 */

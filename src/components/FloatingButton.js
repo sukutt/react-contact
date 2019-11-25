@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 import PropTypes from 'prop-types';
-import AddIcon from 'react-icons/lib/md/add';
+import {MdAddCircle as AddIcon} from 'react-icons/md';
 
 const Wrapper = styled.div`
     /* 레이아웃 */

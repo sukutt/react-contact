@@ -2,11 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-import StarIcon from 'react-icons/lib/md/star';
-import PeopleIcon from 'react-icons/lib/md/people';
-
+import {MdStar as StarIcon, MdPeople as PeopleIcon} from 'react-icons/md';
 import PropTypes from 'prop-types';
-
 
 const Wrapper = styled.div`
     height: 4rem;

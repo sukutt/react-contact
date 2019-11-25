@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Person from 'react-icons/lib/md/person';
+import {MdPerson as Person} from 'react-icons/md';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`

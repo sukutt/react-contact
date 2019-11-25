@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ContactItem from './ContactItem';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import {CSSTransition as CSSTransitionGroup } from 'react-transition-group';
 import { transitions } from '../lib/style-utils';
 
 const Wrapper = styled.div`

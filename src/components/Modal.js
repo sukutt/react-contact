@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 import {media, transitions} from '../lib/style-utils';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-
+import {CSSTransition as CSSTransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 // 모달 위치 및 사이즈 설정

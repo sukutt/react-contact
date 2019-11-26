@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
-
 import {MdStar as StarIcon, MdPeople as PeopleIcon} from 'react-icons/md';
 import PropTypes from 'prop-types';
 

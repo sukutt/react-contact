@@ -6,8 +6,7 @@ import ViewSelector from '../components/ViewSelector';
 
 class ViewSelectorContainer extends Component {
     // 클릭된 탭에서 필요 view가 무엇인지 얻어온다.
-    handleSelect(view) {
-        // 탭 change 액션이 발생하면?
+    handleSelect = (view) => {
         const { BaseActions } = this.props;
         BaseActions.setView(view);
     }

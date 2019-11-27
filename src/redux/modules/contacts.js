@@ -2,9 +2,15 @@ import { Map, List } from 'immutable';
 import { createAction, handleActions } from 'redux-actions';
 
 // Action Type
+const CREATE = 'contacts/CREATE';
+const MODIFY = 'contacts/MODIFY';
+const REMOVE = 'contacts/REMOVE';
 const TOGGLE_FAVORITE = 'contacts/TOGGLE_FAVORITE';
 
 // Action
+export const create = createAction(CREATE);
+export const modify = createAction(MODIFY);
+export const remove = createAction(REMOVE);
 export const toggleFavorite = createAction(TOGGLE_FAVORITE);
 
 const initialState = List([
@@ -47,8 +53,20 @@ const initialState = List([
 
 // Reducer
 export default handleActions({
+    [REMOVE]: (state, action) => {
+        const index = state.findIndex(contact => contact.get('id') === action.payload); 
+        return state.delete(index);
+    },
     [TOGGLE_FAVORITE]: (state, action) => {
         const index = state.findIndex(contact => contact.get('id') === action.payload);
         return state.update(index, contact => contact.set('favorite', !contact.get('favorite')));
+    },
+    [CREATE]: (state, action) => {
+        return state.push(Map(action.payload));
+    },
+    [MODIFY]: (state, action) => {
+        const {id, contact} = action.payload;
+        const index = state.findIndex(contact => contact.get('id') === id);
+        return state.mergeIn([index], contact);
     }
 }, initialState);

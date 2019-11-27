@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import Thumbnail from './Thumbnail';
 import {MdStar as StarIcon, MdEdit as EditIcon} from 'react-icons/md';
 
@@ -121,12 +122,9 @@ const Phone = styled.div`
     margin-top: 0.25rem;
 `;
 
-
-
 class ContactItem extends Component {
-
     static propTypes = {
-        contact: PropTypes.shape({
+        contact: ImmutablePropTypes.mapContains({
             id: PropTypes.string,
             name: PropTypes.string,
             phone: PropTypes.string,
@@ -139,11 +137,8 @@ class ContactItem extends Component {
 
     render() {
         // 레퍼런스 준비
-        const {
-            contact: { name, phone, favorite, id, color },
-            onOpenModify,
-            onToggleFavorite
-        } = this.props;
+        const { contact, onToggleFavorite, onOpenModify} = this.props;
+        const { name, phone, favorite, id, color} = contact.toJS();
 
         return (
             <Wrapper>
